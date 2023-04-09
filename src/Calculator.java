@@ -1,14 +1,12 @@
 package com.company.src;
-import java.util.Objects;
-import java.util.Stack;
 
 /**
- * A class that calculates an expression.
+ * A class that calculates an expression
  */
 public class Calculator {
 
     /**
-     * Expression which contains numbers, brackets, operators, spaces and other characters.
+     * Expression which contains numbers, brackets, operators, spaces and other characters
      */
     private String Expression;
 
@@ -36,7 +34,7 @@ public class Calculator {
     }
 
     /**
-     * The method for checking if the expression is correct
+     * Method for checking if the expression is correct
      *
      * @return True if the expression is correct, false if not
      */
@@ -95,4 +93,42 @@ public class Calculator {
             return brackets == 0;
         }
     }
+
+    /**
+     * Method that determines the priority for operators
+     * @param character Symbol - operator or brackets
+     * @return Symbol priority
+     */
+    public int priority(char character) {
+        switch (character) {
+            case '*':
+            case '/':
+                return 3;
+            case '+':
+            case '-':
+                return 2;
+            case '(':
+                return 1;
+            case ')':
+                return -1;
+            default:
+                return 0;
+        }
+    }
+
+    /**
+     * Method that converts expression in postfix form
+     * @return True if it's possible, false if not
+     */
+    private boolean postfixConvertion() {
+
+        if (!isCorrect() || Expression.isEmpty())
+            return false;
+
+        else {
+
+            return true;
+        }
+    }
 }
+
