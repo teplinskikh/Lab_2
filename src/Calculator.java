@@ -1,5 +1,9 @@
 package com.company.src;
 
+import java.util.Objects;
+import java.util.Stack;
+import java.util.Vector;
+
 /**
  * A class that calculates an expression
  */
@@ -11,12 +15,18 @@ public class Calculator {
     private String Expression;
 
     /**
+     * Variable which contains the answer for expression
+     */
+    private Double Answer;
+
+    /**
      * Constructor of the Calculator class
      *
      * @param str Expression
      */
     Calculator(String str) {
         this.Expression = str;
+        this.Answer = 0.0;
     }
 
     /**
@@ -121,14 +131,95 @@ public class Calculator {
      * @return True if it's possible, false if not
      */
     private boolean postfixConvertion() {
-
         if (!isCorrect() || Expression.isEmpty())
             return false;
-
         else {
+            StringBuilder newExpression = new StringBuilder();
+            Vector<Character> characters = new Vector<Character>();
+
+            int operationType = 0;
+
+            for (int pos = 0; pos < Expression.length(); pos++) {
+                operationType = priority(Expression.charAt(pos));
+
+                switch(operationType){
+                    case 0: newExpression.append(Expression.charAt(pos));
+                    case 1: characters.add(0, Expression.charAt(pos));
+                    case 2: case 3: {
+                        newExpression.append(' ');
+                        while (!characters.isEmpty()) {
+                            if (priority(characters.elementAt(0)) >= operationType)
+                                newExpression.append(characters.remove(0));
+                            else break;
+                        }
+                        characters.add(0, Expression.charAt(pos));
+                    }
+                    case -1:{
+                        newExpression.append(' ');
+                        while (priority(characters.elementAt(0)) != 1)
+                            newExpression.append(characters.remove(0));
+                        characters.remove(0);
+                    }
+                }
+            }
+
+            while (!characters.isEmpty()) newExpression.append(characters.remove(0));
+            Expression = newExpression.toString();
 
             return true;
         }
+    }
+
+    /**
+     * Method that calculates the value of expression in postfix form and put this value in Answer
+     * @return True if it's calculated, false if not
+     */
+    public boolean calculate() {
+        boolean isConverted = postfixConvertion();
+        if (!isConverted) return false;
+        else {
+
+            StringBuilder result = new StringBuilder();
+            Vector<Double> numbers = new Vector<Double>();
+
+            for (int pos = 0;pos < Expression.length(); pos++) {
+
+                if (Expression.charAt(pos) == ' ') continue;
+
+                if (priority(Expression.charAt(pos)) == 0){
+
+                    while (Expression.charAt(pos) != ' ' && priority(Expression.charAt(pos)) == 0) {
+                        result.append(Expression.charAt(pos++));
+                        if (pos == Expression.length()) break;
+                    }
+
+                    numbers.add(0, Double.parseDouble(result.toString()));
+                    result.setLength(0);
+                }
+
+                if (priority(Expression.charAt(pos)) > 1) {
+
+                    double num1 = numbers.remove(0);
+                    double num2 = numbers.remove(0);
+
+                    switch(Expression.charAt(pos)){
+                        case '+': numbers.add(0,num2 + num1);
+                        case '-': numbers.add(0,num2 - num1);
+                        case '*': numbers.add(0,num2 * num1);
+                        case '/': numbers.add(0,num2 / num1);
+                    }
+                }
+            }
+            Answer = numbers.remove(0);
+            return true;
+        }
+    }
+
+    /**
+     * Method that returns answer
+     */
+    public Double getAnswer() {
+        return Answer;
     }
 }
 
