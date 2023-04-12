@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62ade73d-2eb7-4f7e-8b30-7f2b23192766" name="Changes" comment="Fourth commit&#10;Added Main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="62ade73d-2eb7-4f7e-8b30-7f2b23192766" name="Changes" comment="Fifth commit&#10;Added unit test for Calculator method" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681315454103</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fifth commit&#10;Added unit test for Calculator method">
+      <created>1681329552049</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681329552049</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +104,7 @@
     <MESSAGE value="Second commit&#10;Added method priority and started postfixConvertion method" />
     <MESSAGE value="Third commit&#10;Finished postfixConvertion method,added calculate method and getAnswer method" />
     <MESSAGE value="Fourth commit&#10;Added Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth commit&#10;Added Main" />
+    <MESSAGE value="Fifth commit&#10;Added unit test for Calculator method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fifth commit&#10;Added unit test for Calculator method" />
   </component>
 </project>
