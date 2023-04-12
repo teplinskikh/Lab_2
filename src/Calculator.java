@@ -177,6 +177,7 @@ public class Calculator {
      */
     public boolean calculate() {
         boolean isConverted = postfixConvertion();
+        boolean isAnyCalculation = false;
         if (!isConverted) return false;
         else {
 
@@ -197,8 +198,9 @@ public class Calculator {
                     numbers.add(0, Double.parseDouble(result.toString()));
                     result.setLength(0);
                 }
-
+                if (pos == Expression.length()) break;
                 if (priority(Expression.charAt(pos)) > 1) {
+                    isAnyCalculation = true;
 
                     double num1 = numbers.remove(0);
                     double num2 = numbers.remove(0);
@@ -211,8 +213,11 @@ public class Calculator {
                     }
                 }
             }
-            Answer = numbers.remove(0);
-            return true;
+            if (isAnyCalculation) {
+                Answer = numbers.remove(0);
+                return true;
+            }
+            else return false;
         }
     }
 

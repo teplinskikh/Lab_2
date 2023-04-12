@@ -20,14 +20,14 @@ public class Main {
             System.out.print("Enter the expression: ");
             String str = input.nextLine();
 
-            Calculator exp = new Calculator(str);
-            isCalculated = exp.calculate();
+            Calculator expression = new Calculator(str);
+            isCalculated = expression.calculate();
 
             if (!isCalculated) {
                 System.out.print("Input is incorrect.");
             } else {
                 System.out.print(str + " = ");
-                System.out.println(exp.getAnswer().toString());
+                System.out.println(expression.getAnswer().toString());
             }
             System.out.println("Type 'exit' to end program.");
             marker = input.nextLine();
