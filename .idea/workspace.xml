@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62ade73d-2eb7-4f7e-8b30-7f2b23192766" name="Changes" comment="Second commit&#10;Added method priority and started postfixConvertion method">
+    <list default="true" id="62ade73d-2eb7-4f7e-8b30-7f2b23192766" name="Changes" comment="Third commit&#10;Finished postfixConvertion method,added calculate method and getAnswer method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
     </list>
@@ -12,6 +12,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681079181418</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Third commit&#10;Finished postfixConvertion method,added calculate method and getAnswer method">
+      <created>1681137424924</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681137424924</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -77,6 +91,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit&#10;Added class Calculator and methods rmvSpaces, isCorrect" />
     <MESSAGE value="Second commit&#10;Added method priority and started postfixConvertion method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second commit&#10;Added method priority and started postfixConvertion method" />
+    <MESSAGE value="Third commit&#10;Finished postfixConvertion method,added calculate method and getAnswer method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third commit&#10;Finished postfixConvertion method,added calculate method and getAnswer method" />
   </component>
 </project>

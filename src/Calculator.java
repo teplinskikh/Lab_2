@@ -82,7 +82,8 @@ public class Calculator {
                         case ')': {
                             brackets--;
                             if (pos == 0) return false;
-                            else if (ops.contains(String.valueOf(Expression.charAt(pos + 1))) || Expression.charAt(pos - 1) == '(')
+                            else
+                                if ( Expression.charAt(pos - 1) == '(')
                                 return false;
                             break;
                         }
@@ -143,8 +144,8 @@ public class Calculator {
                 operationType = priority(Expression.charAt(pos));
 
                 switch(operationType){
-                    case 0: newExpression.append(Expression.charAt(pos));
-                    case 1: characters.add(0, Expression.charAt(pos));
+                    case 0: newExpression.append(Expression.charAt(pos)); break;
+                    case 1: characters.add(0, Expression.charAt(pos)); break;
                     case 2: case 3: {
                         newExpression.append(' ');
                         while (!characters.isEmpty()) {
@@ -153,13 +154,13 @@ public class Calculator {
                             else break;
                         }
                         characters.add(0, Expression.charAt(pos));
-                    }
+                    } break;
                     case -1:{
                         newExpression.append(' ');
                         while (priority(characters.elementAt(0)) != 1)
                             newExpression.append(characters.remove(0));
                         characters.remove(0);
-                    }
+                    } break;
                 }
             }
 
@@ -203,10 +204,10 @@ public class Calculator {
                     double num2 = numbers.remove(0);
 
                     switch(Expression.charAt(pos)){
-                        case '+': numbers.add(0,num2 + num1);
-                        case '-': numbers.add(0,num2 - num1);
-                        case '*': numbers.add(0,num2 * num1);
-                        case '/': numbers.add(0,num2 / num1);
+                        case '+': numbers.add(0,num2 + num1); break;
+                        case '-': numbers.add(0,num2 - num1); break;
+                        case '*': numbers.add(0,num2 * num1); break;
+                        case '/': numbers.add(0,num2 / num1); break;
                     }
                 }
             }
